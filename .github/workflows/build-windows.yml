@@ -1,0 +1,32 @@
+name: Build PandaMC for Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Download source
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build PandaMC
+        run: npm run build --if-present
+
+      - name: Create Windows installer
+        run: npx electron-builder --win nsis
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: PandaMC-Windows-Installer
+          path: dist/*.exe
