@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: https:;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PandaMC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">🐼</div><span>Panda<span class="green">MC</span></span></div>
+    <div class="nav-label">LIBRARY</div>
+    <button class="nav active" data-page="home">⌂ <span>Home</span></button>
+    <button class="nav" data-page="versions">▦ <span>Versions</span></button>
+    <button class="nav" data-page="mods">◇ <span>Mods</span></button>
+    <button class="nav" data-page="shaders">✧ <span>Shaders</span></button>
+    <button class="nav" data-page="packs">▧ <span>Texture & data packs</span></button>
+    <div class="side-bottom">
+      <button class="nav" data-page="profiles">▣ <span>Profiles</span></button>
+      <button class="nav" data-page="settings">⚙ <span>Settings</span></button>
+      <div class="side-note">Your Minecraft, your way.</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="crumb">PandaMC <span>/</span> <b id="page-name">Home</b></div>
+      <div class="top-right"><span class="status-dot"></span> Launcher preview</div>
+    </header>
+
+    <section id="home" class="page show">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</div>
+          <h1>Welcome to<br><span>PandaMC.</span></h1>
+          <p>A clean home for your Minecraft profiles, versions and add-ons.</p>
+          <div class="hero-actions">
+            <button class="primary" id="play-button">▶ &nbsp; Play Minecraft</button>
+            <button class="secondary" id="profile-button">＋ Create profile</button>
+          </div>
+          <div class="small-note">Launcher interface preview · Game launching is not configured yet</div>
+        </div>
+        <div class="hero-art"><div class="moon"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="pixel-panda">🐼</div></div>
+      </div>
+      <div class="section-head"><div><div class="eyebrow">QUICK ACCESS</div><h2>Your library</h2></div></div>
+      <div class="tiles">
+        <button class="tile" data-goto="profiles"><span class="tile-icon">▣</span><b>Profiles</b><small>Keep PvP and Survival separate</small></button>
+        <button class="tile" data-goto="mods"><span class="tile-icon">◇</span><b>Mods</b><small>Discover mods for your setup</small></button>
+        <button class="tile" data-goto="shaders"><span class="tile-icon">✧</span><b>Shaders</b><small>Explore visual enhancements</small></button>
+        <button class="tile" data-goto="packs"><span class="tile-icon">▧</span><b>Resource packs</b><small>Texture and data packs</small></button>
+      </div>
+    </section>
+
+    <section id="versions" class="page">
+      <div class="eyebrow">GAME SETUP</div><h1>Versions</h1>
+      <p class="muted">Choose and manage Minecraft versions. Version installation and game launching are not implemented in this starter build.</p>
+      <div class="panel"><h3>Minecraft versions</h3><p>Version manager coming next.</p></div>
+    </section>
+    <section id="mods" class="page">
+      <div class="eyebrow">CUSTOMIZE YOUR GAME</div><h1>Mods</h1>
+      <p class="muted">Browse trusted mod catalogs. This starter opens the official catalog websites; one-click in-app installation is a future feature.</p>
+      <div class="catalog-grid">
+        <div class="panel"><div class="catalog-mark">M</div><h3>Modrinth</h3><p>Discover mods, modpacks and more.</p><button class="primary small" data-url="https://modrinth.com/mods">Browse Modrinth ↗</button></div>
+        <div class="panel"><div class="catalog-mark orange">C</div><h3>CurseForge</h3><p>Explore Minecraft projects.</p><button class="primary small" data-url="https://www.curseforge.com/minecraft">Browse CurseForge ↗</button></div>
+      </div>
+    </section>
+    <section id="shaders" class="page">
+      <div class="eyebrow">VISUALS</div><h1>Shaders</h1><p class="muted">Find shader packs from trusted creators.</p>
+      <div class="panel"><h3>Shader catalog</h3><p>Shader discovery and automatic installation will be added in a later version.</p><button class="primary small" data-url="https://modrinth.com/shaders">Browse shaders ↗</button></div>
+    </section>
+    <section id="packs" class="page">
+      <div class="eyebrow">MAKE IT YOURS</div><h1>Texture & data packs</h1><p class="muted">Explore packs for changing your world's look and gameplay.</p>
+      <div class="catalog-grid">
+        <div class="panel"><h3>Resource packs</h3><p>Textures, sounds and visual styles.</p><button class="primary small" data-url="https://modrinth.com/resourcepacks">Browse resource packs ↗</button></div>
+        <div class="panel"><h3>Data packs</h3><p>Customize vanilla gameplay.</p><button class="primary small" data-url="https://modrinth.com/datapacks">Browse data packs ↗</button></div>
+      </div>
+    </section>
+    <section id="profiles" class="page">
+      <div class="eyebrow">SEPARATE YOUR WORLDS</div><h1>Profiles</h1><p class="muted">Plan independent setups for different ways to play.</p>
+      <div id="profile-list" class="profile-list"></div>
+      <button class="primary" id="new-profile">＋ Create profile</button>
+    </section>
+    <section id="settings" class="page">
+      <div class="eyebrow">PREFERENCES</div><h1>Settings</h1>
+      <div class="panel"><h3>Minecraft folder</h3><p class="muted" id="folder-label">No folder selected</p><button class="secondary" id="choose-folder">Choose folder</button></div>
+      <div class="panel"><h3>About PandaMC</h3><p class="muted">PandaMC is an independent community launcher project and is not affiliated with Mojang or Microsoft.</p></div>
+    </section>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>
