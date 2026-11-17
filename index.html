@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PandaMC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="panda-mark">熊</div><span>Panda<span class="green">MC</span></span></div>
+    <nav>
+      <button class="nav active" data-page="home">Home</button>
+      <button class="nav" data-page="mods">Mods</button>
+      <button class="nav" data-page="versions">Versions</button>
+      <button class="nav" data-page="settings">Settings</button>
+      <button class="nav" data-page="about">About</button>
+    </nav>
+    <div class="window-dot">●</div>
+  </header>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR GAME. YOUR WAY.</p>
+          <h1>Ready when<br><span>you are.</span></h1>
+          <p class="sub">A little more personal. A lot more Minecraft.</p>
+          <div class="launch-row">
+            <select id="homeVersion" aria-label="Minecraft version">
+              <option>1.21.4</option><option>1.21.1</option><option>1.20.6</option><option>1.20.4</option><option>1.19.4</option><option>1.18.2</option><option>1.16.5</option><option>1.12.2</option>
+            </select>
+            <button class="launch" id="launchBtn">▶ &nbsp; LAUNCH</button>
+          </div>
+          <p class="tiny" id="launchStatus">PandaMC is getting things ready.</p>
+        </div>
+        <div class="hero-art">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="floating-block block-a"></div><div class="floating-block block-b"></div>
+          <div class="panda-face"><i></i><b></b><span>●</span></div>
+          <div class="spark s1">✦</div><div class="spark s2">✧</div>
+        </div>
+        <div class="hero-foot"><span>● &nbsp; PANDA CLIENT</span><span>BUILT FOR YOUR NEXT WORLD ↗</span></div>
+      </div>
+
+      <div class="section-heading"><div><p class="eyebrow">THE LATEST</p><h2>What's happening</h2></div><span class="muted">A few things from the community</span></div>
+      <div class="news-grid">
+        <article class="news-card news-one"><div class="news-art"><span class="tag">PANDAMC UPDATE</span><strong>Small changes.<br>Better sessions.</strong><span class="art-panda">熊</span></div><div class="news-text"><b>Welcome to PandaMC</b><p>This is your home base. More launcher features are on the way.</p><small>DEV LOG &nbsp; · &nbsp; 2 MIN READ</small></div></article>
+        <article class="news-card news-two"><div class="news-art"><span class="tag">MOD SPOTLIGHT</span><strong>Make the game<br>feel like yours.</strong><span class="pixel-leaf">✳</span></div><div class="news-text"><b>Your setup, your rules</b><p>Use the Mods tab to grab a JAR from a project's latest GitHub release.</p><small>COMMUNITY &nbsp; · &nbsp; MODS</small></div></article>
+        <article class="news-card news-three"><div class="news-art"><span class="tag">COMING UP</span><strong>More ways<br>to play.</strong><span class="big-number">01</span></div><div class="news-text"><b>More launcher support</b><p>Version and loader management will grow as PandaMC develops.</p><small>ROADMAP &nbsp; · &nbsp; SOON</small></div></article>
+      </div>
+    </section>
+
+    <section class="page" id="mods">
+      <div class="page-head"><p class="eyebrow">MAKE IT YOURS</p><h1>Mod <span>workshop.</span></h1><p>Install a mod JAR from a project's latest GitHub release.</p></div>
+      <div class="panel install-panel">
+        <div class="panel-icon">＋</div><div class="panel-content"><h3>Install from GitHub</h3><p>Paste the repository link. PandaMC will look for a .jar file in its latest release.</p>
+          <div class="input-row"><input id="githubUrl" type="url" placeholder="https://github.com/owner/mod-repo"><button class="green-btn" id="installBtn">Install mod</button></div>
+          <p class="tiny" id="installStatus">You'll choose the Minecraft mods folder after clicking Install.</p>
+        </div>
+      </div>
+      <div class="notice"><b>Quick heads-up</b><p>Make sure the mod matches your Minecraft version and loader (Fabric, Forge, or NeoForge). Only install mods from developers you trust. This starter currently downloads the first .jar asset in the latest GitHub release.</p></div>
+    </section>
+
+    <section class="page" id="versions">
+      <div class="page-head"><p class="eyebrow">PICK YOUR WORLD</p><h1>Game <span>versions.</span></h1><p>Choose a version for the launcher interface.</p></div>
+      <div class="panel"><h3>Selected Minecraft version</h3><select id="versionSelect" class="wide-select"></select><p class="tiny">This selector is a UI starter. Automatic version downloads, Microsoft sign-in, and game launching still need to be integrated.</p></div>
+      <div class="version-chips"><span>JAVA EDITION</span><span>FABRIC · planned</span><span>FORGE · planned</span><span>NEOFORGE · planned</span></div>
+    </section>
+
+    <section class="page" id="settings">
+      <div class="page-head"><p class="eyebrow">MAKE YOURSELF AT HOME</p><h1>Client <span>settings.</span></h1></div>
+      <div class="panel setting-row"><div><h3>Accent colour</h3><p>That familiar PandaMC green.</p></div><span class="colour-swatch"></span></div>
+      <div class="panel setting-row"><div><h3>Launcher status</h3><p>Early build · 0.1.0</p></div><span class="status-pill">PREVIEW</span></div>
+    </section>
+
+    <section class="page" id="about">
+      <div class="page-head"><p class="eyebrow">A SMALL PROJECT WITH BIG PLANS</p><h1>About <span>PandaMC.</span></h1><p>Made for Minecraft players who want a launcher that feels like their own.</p></div>
+      <div class="panel"><div class="about-logo">熊</div><h2>PandaMC</h2><p class="muted">An independent launcher starter project. Not affiliated with Mojang or Microsoft.</p><p class="tiny">The current build includes the desktop UI and GitHub release JAR downloader. Minecraft authentication, installation, and launching are not implemented yet.</p></div>
+    </section>
+  </main>
+  <footer><span>熊 &nbsp; PANDAMC <i>EARLY BUILD</i></span><span>NOT AN OFFICIAL MINECRAFT PRODUCT</span></footer>
+  <script src="renderer.js"></script>
+</body>
+</html>
